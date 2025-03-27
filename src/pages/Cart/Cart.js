@@ -5,6 +5,9 @@ import CartContext from "../../store/cart-context";
 import { useContext } from "react";
 const Cart = () => {
   const cartCtx = useContext(CartContext);
+  if (cartCtx.items.length == 0) {
+    cartCtx.totalAmount = 0;
+  }
 
   const productQuantityHandler = (operation, item) => {
     if (operation === "plus") {
@@ -95,7 +98,7 @@ const Cart = () => {
               })}
             </div>
             <button className="payoutBtn" onClick={payoutSuccess}>
-              Payout <span>${cartCtx.totalAmount}</span>
+              Payout <span>${cartCtx?.totalAmount?.toFixed(2)}</span>
             </button>
           </div>
         </div>
