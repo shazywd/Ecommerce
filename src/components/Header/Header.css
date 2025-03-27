@@ -1,41 +1,127 @@
 .header {
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
   height: 60px;
+  padding: 0 20px;
+  background-color: #f8f8f8;
+  position: relative;
+  gap: 20px;
 }
-.tabsLinks {
-  display: flex;
-  gap: 30px;
-}
-.tabsLinks a {
-  text-decoration: none;
-  color: black;
-}
-.headerSearch {
-  padding: 10px;
-  width: 300px;
-  /* background-color: red; */
-  border-radius: 10px;
-  border: 2px solid rgb(173, 173, 173);
-}
-.cartBtn {
-  background-color: black;
-  padding: 10px 20px;
-  border-radius: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-}
-.cartBtn img {
-  width: 20px;
-}
-.noInCarts {
-  background-color: black;
-  color: white;
-}
+
 .web-name a {
   text-decoration: none;
   color: black;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.menu-button {
+  display: none;
+}
+
+.tabsLinks {
+  padding-left: 20px;
+  display: flex;
+  gap: 15px;
+}
+
+.tabsLinks a {
+  text-decoration: none;
+  color: black;
+  font-size: 0.9rem;
+  transition: color 0.3s ease-in-out;
+}
+
+.tabsLinks a:hover {
+  color: #007bff;
+}
+
+.search-container {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.headerSearch {
+  padding: 6px;
+  width: 200px;
+  border-radius: 5px;
+  border: 1px solid #aaa;
+}
+
+.cartBtn {
+  background-color: black;
+  padding: 6px 12px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  color: white;
+}
+
+.cartBtn img {
+  width: 18px;
+}
+
+.noInCarts {
+  color: white;
+  font-size: 0.8rem;
+  padding: 2px 5px;
+  border-radius: 50%;
+}
+
+/* Responsive Styles */
+@media (max-width: 1000px) {
+  .tabsLinks {
+    padding-left: 40px;
+    gap: 10px;
+  }
+
+  .tabsLinks a {
+    font-size: 0.85rem;
+  }
+
+  .headerSearch {
+    width: 180px;
+    padding: 5px;
+  }
+
+  .cartBtn {
+    padding: 5px 10px;
+    gap: 6px;
+  }
+}
+
+@media (max-width: 740px) {
+  .menu-button {
+    display: block;
+  }
+  .cartBtn {
+    background-color: black;
+    padding: 3px 6px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    color: white;
+  }
+  .tabsLinks {
+    display: none;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background: #f8f8f8;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 0;
+  }
+
+  .tabsLinks.open {
+    display: flex;
+  }
 }
